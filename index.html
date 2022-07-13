@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/62af00bbe1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Audio Player</title>
 </head>
+
 <body>
     <div class="app">
         <div class="audio">
-            <audio src="assets-dev/music.webm" controls></audio>
+            <audio src="assets-dev/music.webm"></audio>
         </div>
         <div class="audio-controls">
             <div class="left-controls">
-                <i class="fa-solid fa-backward-step"></i>
-                <i class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-forward-step"></i>
+                <i class="button fa-solid fa-backward-step fa-lg"></i>
+                <i class="button fa-solid fa-play fa-lg"></i>
+                <i class="button fa-solid fa-forward-step fa-lg"></i>
             </div>
             <div class="middle-information">
-                <span class="music-name">Chainsaw Man</span>
-                <span class="music-singer">Rodrigo Zin</span>
-                <span class="music-stamp">00:00 / 06:10</span>
-                <img src="" alt="" class="music-cover">
+                <img class="audio-cover" src="assets-dev/thumb.jpg" alt="">
+                <div class="audio-information">
+                    <span class="audio-title audio-information">Chainsaw Man</span>
+                    <span class="audio-singer audio-information">Rodrigo Zin</span>
+                </div>
             </div>
             <div class="right-controls">
-                <i class="fa-solid fa-volume-high"></i>
-                <i class="fa-solid fa-repeat"></i>
-                <i class="fa-solid fa-shuffle"></i>
-                <i class="fa-solid fa-caret-up"></i>
+                <i class="button fa-solid fa-volume-high fa-lg"></i>
+                <i class="button fa-solid fa-repeat fa-lg"></i>
+                <i class="button fa-solid fa-shuffle fa-lg"></i>
+                <i class="button fa-solid fa-caret-up fa-lg"></i>
             </div>
         </div>
         <div class="playlist" style="display: none;">
@@ -38,4 +42,5 @@
         </div>
     </div>
 </body>
+
 </html>
