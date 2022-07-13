@@ -48,12 +48,13 @@ body{
 
 .current-seek-bar{
     margin-top: -5px;
-    width: 20%;
+    width: 0%;
     height: 5px;
     background-color: blue;
+    transition: .2s;
 }
 
-.current-time-seek::before{
+.current-seek-bar::before{
     content: '';
     height: 12px;
     width: 12px;
@@ -92,6 +93,12 @@ body{
 .audio-information{
     display: block;
     font-family: 'Quicksand', sans-serif;
+}
+
+.time{
+    display: flex;
+    font-size: 0.7rem;
+    font-weight:300;
 }
 
 .audio-title{
