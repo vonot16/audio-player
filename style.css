@@ -39,6 +39,7 @@ body{
 .seek-bar{
     width: 100%;
     cursor: pointer;
+    z-index: 0;
 }
 
 .background-seek-bar{
@@ -69,8 +70,7 @@ body{
 .show-time{
     width: fit-content;
     background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
-    top: -2px;
+    position: absolute;
     color: rgba(255, 255, 255, 1);
     padding: 3px;
     border-radius: 2px;

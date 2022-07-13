@@ -2,6 +2,7 @@ window.onload = () => {
     const audio = document.querySelector("audio")
     const seekBar = document.querySelector(".seek-bar")
     const currentSeek = document.querySelector(".current-seek-bar")
+    const mouseTime = document.querySelector(".show-time")
     const playButton = document.querySelector(".play")
     const pauseButton = document.querySelector(".pause")
     const durationLabel = document.querySelector(".duration")
@@ -31,18 +32,30 @@ window.onload = () => {
         let minutes = Math.floor(time/60)
         let seconds = Math.ceil(time%60)
 
-        console.log(time)
         return `${minutes.toFixed(0).padStart(2, '0')}:${seconds.toFixed(0).padStart(2, '0')}`
     }
 
     function addEvents() {
         playButton.addEventListener("click", playPause)
         pauseButton.addEventListener("click", playPause)
-        seekBar.addEventListener("mouseover",barOver)
+        seekBar.addEventListener("mousemove",barOver)
+        seekBar.addEventListener("click",barOver)
+        seekBar.addEventListener("mouseout",barOut)
     }
 
     function barOver(e){
-        console.log(e)
+        let actualTime = ((e.clientX - e.srcElement.offsetLeft) * (audioDuration + (e.srcElement.offsetLeft/2)) / (e.srcElement.clientWidth + e.srcElement.offsetLeft))
+        mouseTime.classList.remove("hidden")
+        mouseTime.style.left = `${e.clientX}px`
+        mouseTime.style.top = `${e.clientY-mouseTime.offsetHeight-2}px`
+        mouseTime.innerText = formatTime(actualTime>0 ? actualTime : 0)
+        if(e.type==="click"){
+            audio.currentTime = actualTime
+        }
+    }
+
+    function barOut(){
+        mouseTime.classList.add("hidden")
     }
 
     function playPause() {
