@@ -28,11 +28,6 @@ body{
     width: 80%;
 }
 
-.background-time-bar{
-    background-color: rebeccapurple;
-    height: 5px;
-}
-
 .button{
     font-size: 1.25em;
     border: none;
@@ -41,9 +36,33 @@ body{
     margin: 0 5px 0 5px;
 }
 
-.audio-bar{
-    width: 80%;
+.seek-bar{
+    width: 100%;
+    cursor: pointer;
+}
+
+.background-seek-bar{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 5px;
+}
+
+.current-seek-bar{
+    margin-top: -5px;
+    width: 20%;
+    height: 5px;
+    background-color: blue;
+}
+
+.current-time-seek::before{
+    content: '';
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: relative;
+    left: 100%;
+    top: -75%;
     display: block;
+    background-color: blue;
 }
 
 .audio-controls{
@@ -54,7 +73,7 @@ body{
     justify-content: space-between;
     padding: 0 10px 0 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .middle-information{
