@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.hidden{
+    display: none;
+}
+
 body{
     width: 100vw;
     height: 100vh;
@@ -20,15 +24,31 @@ body{
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.player{
+    width: 80%;
+}
+
+.background-time-bar{
+    background-color: rebeccapurple;
+    height: 5px;
+}
+
 .button{
+    font-size: 1.25em;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     margin: 0 5px 0 5px;
 }
 
-.audio-controls{
-    border-radius: 5px;
-    display: flex;
+.audio-bar{
     width: 80%;
+    display: block;
+}
+
+.audio-controls{
+    border-radius: 0 0 5px 5px;
+    display: flex;
     height: 80px;
     align-items: center;
     justify-content: space-between;

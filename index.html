@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/62af00bbe1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
     <title>Audio Player</title>
 </head>
 
@@ -15,27 +16,34 @@
         <div class="audio">
             <audio src="assets-dev/music.webm"></audio>
         </div>
-        <div class="audio-controls">
-            <div class="left-controls">
-                <i class="button fa-solid fa-backward-step fa-lg"></i>
-                <i class="button fa-solid fa-play fa-lg"></i>
-                <i class="button fa-solid fa-forward-step fa-lg"></i>
+        <div class="player">
+            <div class="audio-bar">
+                <hr class="background-time-bar">
+                <hr class="current-time-bar">
             </div>
-            <div class="middle-information">
-                <img class="audio-cover" src="assets-dev/thumb.jpg" alt="">
-                <div class="audio-information">
-                    <span class="audio-title audio-information">Chainsaw Man</span>
-                    <span class="audio-singer audio-information">Rodrigo Zin</span>
+            <div class="audio-controls">  
+                <div class="left-controls">
+                    <button class="button back"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="button play"><i class="fa-solid fa-play"></i></button>
+                    <button class="button pause hidden"><i class="fa-solid fa-pause"></i></button>
+                    <button class="button forward"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+                <div class="middle-information">
+                    <img class="audio-cover" src="assets-dev/thumb.jpg" alt="">
+                    <div class="audio-information">
+                        <span class="audio-title audio-information">Chainsaw Man</span>
+                        <span class="audio-singer audio-information">Rodrigo Zin</span>
+                    </div>
+                </div>
+                <div class="right-controls">
+                    <button class="button unmuted"><i class="fa-solid fa-volume-high"></i></button>
+                    <button class="button repeat"><i class="fa-solid fa-repeat"></i></button>
+                    <button class="button suffle"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="button playlist"><i class="fa-solid fa-caret-up"></i></button>
                 </div>
             </div>
-            <div class="right-controls">
-                <i class="button fa-solid fa-volume-high fa-lg"></i>
-                <i class="button fa-solid fa-repeat fa-lg"></i>
-                <i class="button fa-solid fa-shuffle fa-lg"></i>
-                <i class="button fa-solid fa-caret-up fa-lg"></i>
-            </div>
         </div>
-        <div class="playlist" style="display: none;">
+        <div class="playlist hidden">
             <div class="add-file">
                 <input type="file" name="" id="" accept="audio/*">
             </div>
