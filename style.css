@@ -66,6 +66,16 @@ body{
     background-color: blue;
 }
 
+.show-time{
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: -2px;
+    color: rgba(255, 255, 255, 1);
+    padding: 3px;
+    border-radius: 2px;
+}
+
 .audio-controls{
     border-radius: 0 0 5px 5px;
     display: flex;

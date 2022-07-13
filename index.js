@@ -1,5 +1,6 @@
 window.onload = () => {
     const audio = document.querySelector("audio")
+    const seekBar = document.querySelector(".seek-bar")
     const currentSeek = document.querySelector(".current-seek-bar")
     const playButton = document.querySelector(".play")
     const pauseButton = document.querySelector(".pause")
@@ -37,6 +38,11 @@ window.onload = () => {
     function addEvents() {
         playButton.addEventListener("click", playPause)
         pauseButton.addEventListener("click", playPause)
+        seekBar.addEventListener("mouseover",barOver)
+    }
+
+    function barOver(e){
+        console.log(e)
     }
 
     function playPause() {
