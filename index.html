@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/62af00bbe1.js" crossorigin="anonymous"></script>
     <title>Audio Player</title>
 </head>
 <body>
     <div class="app">
         <div class="audio">
-            <audio src="" controls></audio>
+            <audio src="assets-dev/music.webm" controls></audio>
         </div>
         <div class="audio-controls">
-            <div class="left-controls"></div>
-            <div class="middle-information"></div>
-            <div class="right-controls"></div>
+            <div class="left-controls">
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-solid fa-play"></i>
+                <i class="fa-solid fa-forward-step"></i>
+            </div>
+            <div class="middle-information">
+                <span class="music-name">Chainsaw Man</span>
+                <span class="music-singer">Rodrigo Zin</span>
+                <span class="music-stamp">00:00 / 06:10</span>
+                <img src="" alt="" class="music-cover">
+            </div>
+            <div class="right-controls">
+                <i class="fa-solid fa-volume-high"></i>
+                <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-caret-up"></i>
+            </div>
         </div>
-        <div class="playlist">
+        <div class="playlist" style="display: none;">
             <div class="add-file">
                 <input type="file" name="" id="" accept="audio/*">
             </div>
