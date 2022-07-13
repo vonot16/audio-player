@@ -13,8 +13,6 @@ window.onload = () => {
     setInterval(updateAudioStatus, 1000)
 
     function loadAudioInformation(){
-        
-
         durationLabel.innerText = formatTime(audioDuration)
     }
 
@@ -23,14 +21,16 @@ window.onload = () => {
             let audioCurrent = audio.currentTime
             let percentage = `${audioCurrent / audioDuration * 100}%`
             currentSeek.style.width = percentage
+            currentLabel.innerText = formatTime(audioCurrent)
 
         }
     }
 
     function formatTime(time){
-        let minutes = time/60
-        let seconds = time%60
+        let minutes = Math.floor(time/60)
+        let seconds = Math.ceil(time%60)
 
+        console.log(time)
         return `${minutes.toFixed(0).padStart(2, '0')}:${seconds.toFixed(0).padStart(2, '0')}`
     }
 
