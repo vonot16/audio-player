@@ -19,13 +19,10 @@ window.onload = () => {
     }
 
     function updateAudioStatus() {
-        if (!audio.paused) {
             let audioCurrent = audio.currentTime
-            let percentage = `${audioCurrent / audioDuration * 100}%`
+            let percentage = `${audioCurrent * 100 / audioDuration}%`
             currentSeek.style.width = percentage
             currentLabel.innerText = formatTime(audioCurrent)
-
-        }
     }
 
     function formatTime(time){
@@ -44,7 +41,8 @@ window.onload = () => {
     }
 
     function barOver(e){
-        let actualTime = ((e.clientX - e.srcElement.offsetLeft) * (audioDuration + (e.srcElement.offsetLeft/2)) / (e.srcElement.clientWidth + e.srcElement.offsetLeft))
+        //let actualTime = ((e.clientX - (seekBar.offsetLeft)) * (audioDuration + (seekBar.offsetLeft/2)) / (seekBar.clientWidth + (seekBar.offsetLeft)))
+        let actualTime = ((e.clientX - seekBar.offsetLeft) * (audioDuration + seekBar.offsetLeft/2)) / (seekBar.clientWidth + seekBar.offsetLeft)
         mouseTime.classList.remove("hidden")
         mouseTime.style.left = `${e.clientX}px`
         mouseTime.style.top = `${e.clientY-mouseTime.offsetHeight-2}px`
@@ -52,6 +50,8 @@ window.onload = () => {
         if(e.type==="click"){
             audio.currentTime = actualTime
         }
+
+        console.log(e)
     }
 
     function barOut(){

@@ -54,7 +54,7 @@ body{
     background-color: blue;
     transition: .2s;
 }
-
+/**
 .current-seek-bar::before{
     content: '';
     height: 12px;
@@ -66,7 +66,7 @@ body{
     display: block;
     background-color: blue;
 }
-
+**/
 .show-time{
     width: fit-content;
     background-color: rgba(0, 0, 0, 0.7);
